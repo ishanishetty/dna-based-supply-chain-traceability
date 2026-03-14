@@ -123,8 +123,8 @@ This project uses a MySQL backend running locally.
 
 3. **Start the development server**:
    ```sh
-npm run dev
-```
+   npm run dev
+   ```
 
 ## Future Improvements
 
