@@ -1,12 +1,65 @@
 # DNA Trace - Supply Chain Tracking System (dna-based-supply-chain-traceability)
 
-A bio-inspired supply chain traceability system that uses DNA-based encoding concepts and cryptographic hashing to ensure secure and tamper-proof product tracking.
+DNA Trace is a bio-inspired supply chain tracking system designed to dynamically monitor product movement across the supply chain.
 
-A supply chain tracking system that uses DNA sequences to track products through their lifecycle.
+The system assigns products DNA-like encoded identifiers and stores tracking updates in a DBMS-backed architecture using MySQL. Users can register products and update their trace records as they move through different stages of the supply chain.
+
+Each tracking event is stored in the database, enabling dynamic monitoring of product lifecycle data. Cryptographic hashing is used to maintain data integrity and detect tampering in tracking records.
+
+The project demonstrates how bio-inspired identification combined with secure database systems can improve transparency and traceability in supply chain management.
+
+## Problem Statement
+
+Modern supply chains often face issues such as:
+
+Lack of transparency in product movement
+
+Difficulty verifying product authenticity
+
+Risk of tampering with tracking records
+
+Limited visibility across supply chain stages
+
+Traditional tracking systems rely on centralized records that may be altered or manipulated.
+
+## Features
+DNA-inspired product identification
+
+Dynamic tracking of product movement
+
+DBMS-backed storage using MySQL
+
+Secure record verification using cryptographic hashing
+
+Web interface for managing and tracking products
+
+## Tech Stack 
+
+Frontend:
+
+React
+
+TypeScript
+
+Tailwind CSS
+
+shadcn-ui
+
+Vite
+
+Backend:
+
+Node.js
+
+Express.js
+
+Database
+
+MySQL (DBMS)
 
 ## Project Setup
 
-This project uses a MySQL backend running locally on your laptop.
+This project uses a MySQL backend running locally.
 
 ### Prerequisites
 
@@ -73,39 +126,14 @@ This project uses a MySQL backend running locally on your laptop.
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+## Future Improvements
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+Possible extensions of the system include:
 
-**Use GitHub Codespaces**
+Multi-role supply chain system (supplier, logistics, consumer)
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+Blockchain-based traceability verification
 
-## What technologies are used for this project?
+IoT integration for automated tracking
 
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
-
+Real-time analytics dashboard for supply chain monitoring
