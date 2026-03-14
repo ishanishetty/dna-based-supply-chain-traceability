@@ -1,4 +1,6 @@
-# DNA Trace - Supply Chain Tracking System
+# DNA Trace - Supply Chain Tracking System (dna-based-supply-chain-traceability)
+
+A bio-inspired supply chain traceability system that uses DNA-based encoding concepts and cryptographic hashing to ensure secure and tamper-proof product tracking.
 
 A supply chain tracking system that uses DNA sequences to track products through their lifecycle.
 
@@ -106,3 +108,4 @@ Yes, you can!
 To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
 
 Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+
