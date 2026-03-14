@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- MySQL Workbench Connection File -->
+<!-- Save this as: C:\Users\[YourUsername]\AppData\Roaming\MySQL\Workbench\connections.xml -->
+<!-- Or import it in MySQL Workbench: Edit > Preferences > Connections -->
+
+<data>
+  <value key="name">DNA Trace Local</value>
+  <value key="hostname">localhost</value>
+  <value key="port">3306</value>
+  <value key="username">root</value>
+  <value key="password">Bajpe@2004</value>
+  <value key="defaultSchema">dna_trace</value>
+  <value key="driver">MySQL</value>
+</data>
+
+
+
+

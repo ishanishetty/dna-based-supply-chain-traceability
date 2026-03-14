@@ -1,0 +1,227 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* DNA Traceability System Design System */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    /* Dark scientific theme */
+    --background: 222 47% 6%;
+    --foreground: 210 40% 96%;
+
+    --card: 222 47% 8%;
+    --card-foreground: 210 40% 96%;
+
+    --popover: 222 47% 10%;
+    --popover-foreground: 210 40% 96%;
+
+    --primary: 180 70% 45%;
+    --primary-foreground: 222 47% 6%;
+
+    --secondary: 222 30% 15%;
+    --secondary-foreground: 210 40% 90%;
+
+    --muted: 222 30% 12%;
+    --muted-foreground: 215 20% 55%;
+
+    --accent: 180 60% 35%;
+    --accent-foreground: 210 40% 96%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 222 30% 18%;
+    --input: 222 30% 15%;
+    --ring: 180 70% 45%;
+
+    --radius: 0.75rem;
+
+    /* DNA-specific colors */
+    --dna-a: 142 70% 45%;
+    --dna-t: 0 72% 51%;
+    --dna-c: 217 91% 60%;
+    --dna-g: 45 93% 47%;
+
+    /* Health/Risk colors */
+    --health-high: 142 70% 45%;
+    --health-medium: 45 93% 47%;
+    --health-low: 0 72% 51%;
+
+    /* Glow effects */
+    --glow-primary: 180 70% 45%;
+    --glow-success: 142 70% 45%;
+    --glow-warning: 45 93% 47%;
+    --glow-danger: 0 72% 51%;
+
+    /* Sidebar (keeping defaults) */
+    --sidebar-background: 222 47% 8%;
+    --sidebar-foreground: 210 40% 90%;
+    --sidebar-primary: 180 70% 45%;
+    --sidebar-primary-foreground: 222 47% 6%;
+    --sidebar-accent: 222 30% 12%;
+    --sidebar-accent-foreground: 210 40% 90%;
+    --sidebar-border: 222 30% 18%;
+    --sidebar-ring: 180 70% 45%;
+  }
+
+  .dark {
+    --background: 222 47% 6%;
+    --foreground: 210 40% 96%;
+    --card: 222 47% 8%;
+    --card-foreground: 210 40% 96%;
+    --popover: 222 47% 10%;
+    --popover-foreground: 210 40% 96%;
+    --primary: 180 70% 45%;
+    --primary-foreground: 222 47% 6%;
+    --secondary: 222 30% 15%;
+    --secondary-foreground: 210 40% 90%;
+    --muted: 222 30% 12%;
+    --muted-foreground: 215 20% 55%;
+    --accent: 180 60% 35%;
+    --accent-foreground: 210 40% 96%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 222 30% 18%;
+    --input: 222 30% 15%;
+    --ring: 180 70% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  /* DNA sequence monospace styling */
+  .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer components {
+  /* DNA Base colors */
+  .dna-base-A {
+    @apply text-[hsl(var(--dna-a))];
+  }
+  .dna-base-T {
+    @apply text-[hsl(var(--dna-t))];
+  }
+  .dna-base-C {
+    @apply text-[hsl(var(--dna-c))];
+  }
+  .dna-base-G {
+    @apply text-[hsl(var(--dna-g))];
+  }
+
+  /* Health indicator colors */
+  .health-low {
+    @apply text-[hsl(var(--health-high))];
+  }
+  .health-medium {
+    @apply text-[hsl(var(--health-medium))];
+  }
+  .health-high {
+    @apply text-[hsl(var(--health-low))];
+  }
+
+  /* Risk badges */
+  .risk-low {
+    @apply bg-[hsl(var(--health-high)/0.15)] text-[hsl(var(--health-high))] border-[hsl(var(--health-high)/0.3)];
+  }
+  .risk-medium {
+    @apply bg-[hsl(var(--health-medium)/0.15)] text-[hsl(var(--health-medium))] border-[hsl(var(--health-medium)/0.3)];
+  }
+  .risk-high {
+    @apply bg-[hsl(var(--health-low)/0.15)] text-[hsl(var(--health-low))] border-[hsl(var(--health-low)/0.3)];
+  }
+
+  /* Glow effects */
+  .glow-primary {
+    box-shadow: 0 0 20px hsl(var(--glow-primary) / 0.3), 0 0 40px hsl(var(--glow-primary) / 0.1);
+  }
+  .glow-success {
+    box-shadow: 0 0 20px hsl(var(--glow-success) / 0.3), 0 0 40px hsl(var(--glow-success) / 0.1);
+  }
+  .glow-warning {
+    box-shadow: 0 0 20px hsl(var(--glow-warning) / 0.3), 0 0 40px hsl(var(--glow-warning) / 0.1);
+  }
+  .glow-danger {
+    box-shadow: 0 0 20px hsl(var(--glow-danger) / 0.3), 0 0 40px hsl(var(--glow-danger) / 0.1);
+  }
+
+  /* DNA Helix animation */
+  @keyframes pulse-glow {
+    0%, 100% {
+      opacity: 0.6;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.02);
+    }
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 3s ease-in-out infinite;
+  }
+
+  @keyframes dna-spin {
+    from {
+      transform: rotateY(0deg);
+    }
+    to {
+      transform: rotateY(360deg);
+    }
+  }
+
+  .animate-dna-spin {
+    animation: dna-spin 8s linear infinite;
+    transform-style: preserve-3d;
+  }
+
+  /* Grid pattern background */
+  .bg-grid-pattern {
+    background-image: 
+      linear-gradient(to right, hsl(var(--border) / 0.3) 1px, transparent 1px),
+      linear-gradient(to bottom, hsl(var(--border) / 0.3) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  /* Gradient backgrounds */
+  .bg-gradient-card {
+    background: linear-gradient(135deg, hsl(var(--card)) 0%, hsl(var(--secondary)) 100%);
+  }
+
+  .bg-gradient-primary {
+    background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
+  }
+}
+
+@layer utilities {
+  /* Scrollbar styling */
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
+    border-radius: 3px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: hsl(var(--muted-foreground) / 0.5);
+    border-radius: 3px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--muted-foreground));
+  }
+}

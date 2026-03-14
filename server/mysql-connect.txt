@@ -1,0 +1,23 @@
+MySQL Connection Details for DNA Trace Database:
+
+Host: localhost
+Port: 3306
+Username: root
+Password: Bajpe@2004
+Database: dna_trace
+
+To connect using MySQL Workbench:
+1. Open MySQL Workbench
+2. Click on the "+" to add a new connection
+3. Enter the details above
+4. Click "Test Connection" then "OK"
+5. Double-click the connection to open it
+
+To connect using MySQL command line:
+mysql -u root -p
+(Then enter password: Bajpe@2004)
+USE dna_trace;
+
+
+
+
