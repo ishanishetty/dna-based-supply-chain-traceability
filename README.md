@@ -4,6 +4,10 @@ DNA Trace is a full-stack supply chain tracking system that uses DNA-inspired pr
 
 The system provides a web interface for product registration and tracking, with product and tracking-event data stored in a MySQL database. Cryptographic hashing is used to verify the integrity of tracking records and detect potential tampering.
 
+## Demo
+ 
+🔗 [Live Demo](https://project-hobby2-d930.vercel.app/)
+
 ## Key Features
 
 - 🧬 DNA-inspired product identification
