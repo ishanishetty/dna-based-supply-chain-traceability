@@ -6,7 +6,7 @@ The system provides a web interface for product registration and tracking, with 
 
 ## Demo
  
-🔗 [Live Demo](https://project-hobby2-d930.vercel.app/)
+🔗 [Live Demo](https://project-one-gamma-hm1go4bszb.vercel.app/)
 
 ## Key Features
 
