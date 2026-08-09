@@ -1,41 +1,56 @@
-# DNA Trace - Supply Chain Tracking System (dna-based-supply-chain-traceability)
+DNA Trace — Supply Chain Tracking System
 
-DNA Trace is a bio-inspired supply chain tracking system designed to dynamically monitor product movement across the supply chain.
+DNA Trace is a full-stack supply chain tracking system that uses DNA-inspired product identifiers to track products across different stages of the supply chain.
 
-The system assigns products DNA-like encoded identifiers and stores tracking updates in a DBMS-backed architecture using MySQL. Users can register products and update their trace records as they move through different stages of the supply chain.
+The system provides a web interface for product registration and tracking, with product and tracking-event data stored in a MySQL database. Cryptographic hashing is used to verify the integrity of tracking records and detect potential tampering.
 
-Each tracking event is stored in the database, enabling dynamic monitoring of product lifecycle data. Cryptographic hashing is used to maintain data integrity and detect tampering in tracking records.
+Key Features
 
-The project demonstrates how bio-inspired identification combined with secure database systems can improve transparency and traceability in supply chain management.
+🧬 DNA-inspired product identification
 
-## Problem Statement
+📦 Product registration and lifecycle tracking
 
-Modern supply chains often face issues such as:
+🚚 Supply chain event history
 
-Lack of transparency in product movement
+🗄️ MySQL-based persistent storage
 
-Difficulty verifying product authenticity
+🔌 REST APIs for product and tracking operations
 
-Risk of tampering with tracking records
+🔐 Cryptographic hashing for record integrity verification
 
-Limited visibility across supply chain stages
+🌐 React-based web interface
 
-Traditional tracking systems rely on centralized records that may be altered or manipulated.
+Architecture
 
-## Features
-DNA-inspired product identification
+┌─────────────────────────┐
+│   React + TypeScript    │
+│      Web Interface      │
+└────────────┬────────────┘
+             │
+             │ REST API
+             ▼
+┌─────────────────────────┐
+│   Node.js + Express     │
+│        Backend          │
+└────────────┬────────────┘
+             │
+             │ SQL
+             ▼
+┌─────────────────────────┐
+│      MySQL Database     │
+│ Products + Tracking     │
+│        Records          │
+└────────────┬────────────┘
+             │
+             ▼
+┌─────────────────────────┐
+│  Cryptographic Hashing  │
+│   Integrity Verification│
+└─────────────────────────┘
 
-Dynamic tracking of product movement
+Tech Stack
 
-DBMS-backed storage using MySQL
-
-Secure record verification using cryptographic hashing
-
-Web interface for managing and tracking products
-
-## Tech Stack 
-
-Frontend:
+Frontend
 
 React
 
@@ -43,11 +58,11 @@ TypeScript
 
 Tailwind CSS
 
-shadcn-ui
+shadcn/ui
 
 Vite
 
-Backend:
+Backend
 
 Node.js
 
@@ -55,85 +70,133 @@ Express.js
 
 Database
 
-MySQL (DBMS)
+MySQL
 
-## Project Setup
+Security
 
-This project uses a MySQL backend running locally.
+Cryptographic hashing
 
-### Prerequisites
+Project Structure
 
-- Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-- MySQL installed on your laptop
-- MySQL server running
+dna-based-supply-chain-traceability/
+│
+├── src/                    # React frontend
+│   ├── components/
+│   ├── pages/
+│   └── ...
+│
+├── server/                 # Node.js + Express backend
+│   ├── ...
+│   └── schema.sql
+│
+├── images/                 # Project screenshots
+│
+├── .env.example
+├── package.json
+└── README.md
 
-### Backend Setup (MySQL)
+Key Engineering Work
 
-1. **Install MySQL** (if not already installed):
-   - Windows: Download from [MySQL Downloads](https://dev.mysql.com/downloads/mysql/)
-   - Or use MySQL via XAMPP/WAMP
+Designed the relational database structure for products and tracking events.
 
-2. **Create the database**:
-   ```sql
-   CREATE DATABASE dna_trace;
-   ```
+Implemented REST APIs using Node.js and Express.js.
 
-3. **Navigate to server directory and install dependencies**:
-   ```sh
-   cd server
-   npm install
-   ```
+Built the React interface for product registration and tracking.
 
-4. **Configure database connection**:
-   - Copy `.env.example` to `.env` in the `server` directory
-   - Update `.env` with your MySQL credentials:
-     ```
-     DB_HOST=localhost
-     DB_USER=root
-     DB_PASSWORD=your_password_here
-     DB_NAME=dna_trace
-     PORT=3001
-     ```
+Integrated MySQL for persistent supply chain data.
 
-5. **Create database tables**:
-   ```sh
-   mysql -u root -p dna_trace < schema.sql
-   ```
-   Or manually run the SQL in `server/schema.sql` using MySQL Workbench.
+Implemented cryptographic hashing to support tracking-record integrity verification.
 
-6. **Start the backend server**:
-```sh
-   npm run dev
-   ```
-   The server will run on `http://localhost:3001`
+Connected the frontend and backend through REST APIs.
 
-### Frontend Setup
+Data Integrity
 
-1. **Install dependencies**:
-   ```sh
-   npm install
-   ```
+Tracking records are associated with cryptographic hash values to support integrity verification.
 
-2. **Configure API URL** (optional):
-   - Copy `.env.example` to `.env` in the root directory
-   - Update if your backend runs on a different port:
-     ```
-     VITE_API_URL=http://localhost:3001/api
-     ```
+During verification, the hash can be recalculated from the relevant record data and compared with the stored value. A mismatch indicates that the underlying tracking information may have been modified.
 
-3. **Start the development server**:
-   ```sh
-   npm run dev
-   ```
+Hashing provides tamper detection and integrity verification; it does not itself prevent unauthorized database changes.
 
-## Future Improvements
+Setup
 
-Possible extensions of the system include:
+Prerequisites
 
-Multi-role supply chain system (supplier, logistics, consumer)
+Node.js and npm
 
-Blockchain-based traceability verification
+MySQL
 
-IoT integration for automated tracking
+Git
 
-Real-time analytics dashboard for supply chain monitoring
+Backend Setup
+
+Navigate to the backend directory:
+
+cd server
+npm install
+
+Create a .env file with your MySQL configuration:
+
+DB_HOST=localhost
+DB_USER=root
+DB_PASSWORD=your_password
+DB_NAME=dna_trace
+PORT=3001
+
+Create the database:
+
+CREATE DATABASE dna_trace;
+
+Initialize the database tables:
+
+mysql -u root -p dna_trace < schema.sql
+
+Start the backend:
+
+npm run dev
+
+The backend runs on:
+
+http://localhost:3001
+
+Frontend Setup
+
+From the project root:
+
+npm install
+npm run dev
+
+If required, configure the backend API URL:
+
+VITE_API_URL=http://localhost:3001/api
+
+Screenshots
+
+Product Registration
+
+
+
+Supply Chain Tracking
+
+
+
+Dashboard
+
+
+
+Future Improvements
+
+Role-based access for suppliers, logistics providers, and consumers
+
+Real-time tracking updates
+
+Automated integrity verification
+
+IoT-based tracking integration
+
+Supply chain analytics dashboard
+
+Blockchain-based verification for decentralized traceability
+
+License
+
+This project is licensed under the MIT License.
