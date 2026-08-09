@@ -168,7 +168,7 @@ VITE_API_URL=http://localhost:3001/api
 
 ### Homepage
 
-![Homepage](images/homepage.png.png)
+![Homepage](images/dashboard.png.png)
 
 ### Tracking Dashboard
 
