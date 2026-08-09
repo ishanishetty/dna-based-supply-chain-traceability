@@ -165,11 +165,15 @@ VITE_API_URL=http://localhost:3001/api
 
 ## Screenshots
 
-**Product Registration**
 
-**Supply Chain Tracking**
+### Homepage
 
-**Dashboard**
+![Homepage](images/homepage.png.png)
+
+### Tracking Dashboard
+
+![Tracking Dashboard](images/dnatimeline.png.png)
+
 
 ## Future Improvements
 
